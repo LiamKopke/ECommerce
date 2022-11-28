@@ -19,7 +19,6 @@
     },
     "ECommerce.Api.Products": {
       "commandName": "Project",
-      "dotnetRunMessages": "true",
       "launchBrowser": true,
       "launchUrl": "api/products",
       "applicationUrl": "http://localhost:5003",
