@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "ecommerceapicustomers.fullname" . }}
+  labels:
+    app: {{ template "ecommerceapicustomers.name" . }}
+    chart: {{ template "ecommerceapicustomers.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    app: {{ template "ecommerceapicustomers.name" . }}
+    release: {{ .Release.Name }}
